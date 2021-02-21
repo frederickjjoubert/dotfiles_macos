@@ -11,7 +11,9 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 
 # Create Aliases
-alias ls='ls -lAFh'
+# alias ls='ls -lAFh'
+alias ls='exa -laFh --git'
+alias exa='exa -laFh --git'
 
 # Customize Prompt(s)
 PROMPT='
