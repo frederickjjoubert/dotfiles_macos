@@ -15,9 +15,7 @@ Install using `./install`
 - Dock Preferences
 - Mission Control Preferences
 - Finder Show Path Bar
-- .zshrc
 - Git (config and SSH)
-- Homebrew install
 
 # Software I use
 
