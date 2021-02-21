@@ -34,6 +34,7 @@ Install using `./install`
 - Dropbox
 - Firefox
 - Git Fork
+- GitKraken
 - Google Drive
 - Grammarly
 - Insomnia
@@ -194,7 +195,19 @@ Here are some links to the guides I followed:
 
 ## Terminal Commands
 
+### Source zshrc changes
+
+`source ~/.zshrc`
+
 ### Create executable .zsh file
 
 1. Create a `<filename>.zsh` file.
 2. Give it executable permissions with `chmod +x <filename>.zsh`
+
+### Create / Overwrite Brewfile
+
+`brew bundle dump` to create `Brewfile`
+
+`brew bundle dump --force` to overwrite existing `Brewfile`
+
+`brew bundle dump --force --describe` to overwrite existing `Brewfile` with descriptions.
