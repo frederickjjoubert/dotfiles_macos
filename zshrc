@@ -7,6 +7,9 @@ echo 'Hello there Jacques!'
 ## Syntax highlighting for man pages using bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+## Skip Mac GateKeeper for installed casks
+export HOMEBREW_CASK_OPTS="--no-quarantine"
+
 # Change ZSH Options
 
 
