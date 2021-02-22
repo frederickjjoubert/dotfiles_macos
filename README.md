@@ -16,6 +16,7 @@ Install using `./install`
 - Mission Control Preferences
 - Finder Show Path Bar
 - Git (config and SSH)
+- Alfred (turn off spotlight shortcut and use it for Alfred)
 
 # Software I use
 
