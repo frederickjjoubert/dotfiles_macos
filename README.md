@@ -70,6 +70,8 @@ Install using `./install`
 - mongodb-database-tools
 - node
 - tree
+- mas
+  - [https://github.com/mas-cli/mas](https://github.com/mas-cli/mas)
 
 ## macOS App Store Apps
 
