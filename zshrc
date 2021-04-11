@@ -8,7 +8,7 @@ echo 'Hello there Jacques!'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 ## Skip Mac GateKeeper for installed casks
-export HOMEBREW_CASK_OPTS="--no-quarantine"
+# export HOMEBREW_CASK_OPTS="--no-quarantine"
 
 # Change ZSH Options
 
@@ -26,6 +26,9 @@ RPROMPT='%*'
 
 # Add Locations to $PATH Variable
 
+## Google Cloud SDK
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
 # Write Handy Functions
 function mkcd() {
@@ -33,6 +36,6 @@ function mkcd() {
 }
 
 # Ush ZSH Plugins
-
+plugins=(gcloud)
 
 # Other Surprises!

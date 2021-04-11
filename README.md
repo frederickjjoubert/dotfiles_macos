@@ -2,8 +2,6 @@
 
 These are my .files for backing up and setting up macOS.
 
-I set this up following Patrick McDonald's guide at [dotfiles.eieio.xyz](http://dotfiles.eieio.xyz).
-
 # Install
 
 Install using `./install`
@@ -17,81 +15,6 @@ Install using `./install`
 - Finder Show Path Bar
 - Git (config and SSH)
 - Alfred (turn off spotlight shortcut and use it for Alfred)
-
-# Software I use
-
-## Homebrew
-
-### Applications (Casks)
-
-- Adobe Reader
-- Amazon-Workspaces
-- Android Studio
-- Avira-Antivirus
-- Blender
-- Chrome
-- Discord
-- Docker
-- Dropbox
-- Firefox
-- Git Fork
-- GitKraken
-- Google Drive
-- Grammarly
-- Insomnia
-- JetBrains Rider
-- Kite
-- Microsoft Office
-- Minecraft Launcher
-- MongoDB
-- MongoDB Compass
-- Postman
-- PyCharm
-- Skype
-- Spotify
-- Steam
-- Sublime Text
-- Teamviewer
-- Tor Browser
-- Unity Hub
-- VLC
-- VSCode
-- Webex
-- Zoom
-
-### Packages (Brews)
-
-- bat
-  - [https://github.com/sharkdp/bat](https://github.com/sharkdp/bat)
-- gradle
-- ios-deploy
-- mongodb-community
-- mongodb-community-shell
-- mongodb-database-tools
-- node
-- tree
-- mas
-  - [https://github.com/mas-cli/mas](https://github.com/mas-cli/mas)
-
-## macOS App Store Apps
-
-- Adblock Plus for Safari ABP
-- Downlink
-- Grammarly for Safari
-- Kindle
-- LastPass
-- Logic Pro
-- Magnet
-- Microsoft To Do
-- Monit
-- NordVPN IKE
-- Notability
-- Slack
-- The Unarchiver
-- WhatsApp
-- Xcode
-
-## Other
 
 # Settings
 
@@ -150,6 +73,7 @@ Install using `./install`
 
 #### Extensions
 
+```
 Angular.ng-template
 dbaeumer.vscode-eslint
 DotJoshJohnson.xml
@@ -174,6 +98,7 @@ PKief.material-icon-theme
 quicktype.quicktype
 ritwickdey.LiveServer
 Unity.unity-debug
+```
 
 # Post Install Checklist
 
@@ -187,12 +112,15 @@ These are the dependencies of this project:
 
 # Guides
 
-Here are some links to the guides I followed:
+I set this up following Patrick McDonald's guide at [dotfiles.eieio.xyz](http://dotfiles.eieio.xyz).
+
+- [https://github.com/eieioxyz/dotfiles_macos](https://github.com/eieioxyz/dotfiles_macos)
+
+Here are some links to other guides I followed:
 
 - [http://dotfiles.github.io](http://dotfiles.github.io)
 - [https://github.com/mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
 - [https://www.anishathalye.com/2014/08/03/managing-your-dotfiles/](https://www.anishathalye.com/2014/08/03/managing-your-dotfiles/)
--
 
 # Notes
 
@@ -206,6 +134,10 @@ Here are some links to the guides I followed:
 
 1. Create a `<filename>.zsh` file.
 2. Give it executable permissions with `chmod +x <filename>.zsh`
+
+## Brew Commands
+
+A Cheat Sheet [https://dev.to/code2bits/homebrew---basics--cheatsheet-3a3n](https://dev.to/code2bits/homebrew---basics--cheatsheet-3a3n)
 
 ### Create / Overwrite Brewfile
 
