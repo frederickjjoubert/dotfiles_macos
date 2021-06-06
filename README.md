@@ -15,11 +15,12 @@ These are my dotfiles for backing up and setting up macOS.
 3. `cd ~/.dotfiles`
 4. If necessary, `git checkout <another_branch>`.
 5. Do one last Software Audit by editing [Brewfile](Brewfile) directly.
-6. [`./install`](install)
-7. Restart computer.
-8. Setup up Dropbox (use multifactor authentication!) and allow files to sync before setting up dependent applications. Alfred settings are stored here. Mackup depends on this as well (and thus so do Terminal and VS Code).
-9. Run `mackup restore`. Consider doing a `mackup restore --dry-run --verbose` first.
-10. [Generate ssh key](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh), add to GitHub, and switch remotes.
+6. Login to iCloud and the App Store.
+7. [`./install`](install)
+8. Restart computer.
+9. Setup up Dropbox (use multifactor authentication!) and allow files to sync before setting up dependent applications. Alfred settings are stored here. Mackup depends on this as well (and thus so do Terminal and VS Code).
+10. Run `mackup restore`. Consider doing a `mackup restore --dry-run --verbose` first.
+11. [Generate ssh key](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh), add to GitHub, and switch remotes.
 
     ```zsh
     # Generate SSH key in default location (~/.ssh/config)
@@ -62,11 +63,11 @@ These are my dotfiles for backing up and setting up macOS.
 
 # Post Install Checklist
 
-- Login to VSCode w/ GitHub
 - Login to Dropbox
-- Login to Kite
-- Login to Google Backup and Sync
 - Login to Docker
+- Login to Google Backup and Sync
+- Login to Kite
+- Login to VSCode w/ GitHub
 
 # Dependencies
 
@@ -95,6 +96,7 @@ Backup / sync files:
 - Dropbox / Google Drive
 - Manual Backups (external drives, redundant cloud services)
 - Contacts, Photos, Calendar, Messages (Google, iCloud)
+- Mackup Backup `mackup backup`
 - etc.
 
 Deactivate licenses:
