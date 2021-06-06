@@ -1,114 +1,109 @@
 # dotfiles
 
-These are my .files for backing up and setting up macOS.
-
-# Install
-
-Install using `./install`
+These are my dotfiles for backing up and setting up macOS.
 
 # TODO
 
-- Terminal Preferences
-- Changed Shell to ZSH
 - Dock Preferences
 - Mission Control Preferences
 - Finder Show Path Bar
-- Git (config and SSH)
-- Alfred (turn off spotlight shortcut and use it for Alfred)
 
-# Settings
+# Install / Restore Instructions
 
-## macOS
+1. `xcode-select --install` (Command Line Tools are required for Git and Homebrew)
+2. `git clone https://github.com/frederickjjoubert/dotfiles.git ~/.dotfiles`. We'll start with `https` but switch to `ssh` after everything is installed.
+3. `cd ~/.dotfiles`
+4. If necessary, `git checkout <another_branch>`.
+5. Do one last Software Audit by editing [Brewfile](Brewfile) directly.
+6. [`./install`](install)
+7. Restart computer.
+8. Setup up Dropbox (use multifactor authentication!) and allow files to sync before setting up dependent applications. Alfred settings are stored here. Mackup depends on this as well (and thus so do Terminal and VS Code).
+9. Run `mackup restore`. Consider doing a `mackup restore --dry-run --verbose` first.
+10. [Generate ssh key](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh), add to GitHub, and switch remotes.
 
-## Application Settings
+    ```zsh
+    # Generate SSH key in default location (~/.ssh/config)
+    ssh-keygen -t rsa -b 4096 -C "20562845+frederickjjoubert@users.noreply.github.com"
 
-### VS Code
+    # Start the ssh-agent
+    eval "$(ssh-agent -s)"
 
-#### Settings
+    # Create config file with necessary settings
+    << EOF > ~/.ssh/config
+    Host *
+      AddKeysToAgent yes
+      UseKeychain yes
+      IdentityFile ~/.ssh/id_rsa
+    EOF
 
-```
-{
-  "editor.fontSize": 16,
-  "editor.minimap.enabled": true,
-  "editor.formatOnSave": true,
-  "files.autoSave": "off",
-  "files.autoSaveDelay": 300,
-  "files.exclude": {
-    "**/*.pyc": { "when": "$(basename).py" },
-    "**/__pycache__": true
-  },
-  "python.formatting.provider": "black",
-  //"python.pythonPath": "/usr/local/bin/python3",
-  "terminal.integrated.fontSize": 16,
-  "terminal.integrated.fontFamily": "'Hack', 'PowerlineSymbols'",
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.settings.editor": "json",
-  "workbench.settings.openDefaultSettings": true,
-  "workbench.settings.useSplitJSON": true,
-  "window.zoomLevel": 0,
-  "editor.codeLens": false,
-  "editor.acceptSuggestionOnCommitCharacter": false,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  // Kite
-  "editor.suggestOnTriggerCharacters": true,
-  "kite.showWelcomeNotificationOnStartup": false,
-  "liveServer.settings.donotVerifyTags": true,
-  "angular.experimental-ivy": true
-}
-```
+    # Add private key to ssh-agent
+    ssh-add -K ~/.ssh/id_rsa
 
-#### Extensions
+    # Copy public key and add to github.com > Settings > SSH and GPG keys
+    pbcopy < ~/.ssh/id_rsa.pub
 
-```
-Angular.ng-template
-dbaeumer.vscode-eslint
-DotJoshJohnson.xml
-EditorConfig.EditorConfig
-eg2.vscode-npm-script
-esbenp.prettier-vscode
-johnpapa.angular-essentials
-johnpapa.Angular2
-johnpapa.vscode-peacock
-johnpapa.winteriscoming
-kiteco.kite
-kleber-swf.unity-code-snippets
-ms-azuretools.vscode-docker
-ms-dotnettools.csharp
-ms-python.anaconda-extension-pack
-ms-python.python
-ms-toolsai.jupyter
-msjsdiag.debugger-for-chrome
-msjsdiag.debugger-for-edge
-nrwl.angular-console
-PKief.material-icon-theme
-quicktype.quicktype
-ritwickdey.LiveServer
-Unity.unity-debug
-```
+    # Test SSH connection, then verify fingerprint and username
+    # https://help.github.com/en/github/authenticating-to-github/testing-your-ssh-connection
+    ssh -T git@github.com
+
+    # Switch from HTTPS to SSH
+    git remote set-url origin git@github.com:frederickjjoubert/dotfiles.git
+    ```
+
+## Manual Steps
+
+### Alfred
+
+1. `System Preferences > Keyboard > Shortcuts > Spotlight > Show Spotlight search (cmd+space)` uncheck.
+2. `Alfred Preferences > Powerpack` add License.
+3. `Alfred Preferences > General > Request Permissions`.
+4. `Alfred Preferences > General > Alfred Hotkey` change to `cmd+space`.
+5. `Alfred Preferences > Advanced > Set preferences folder` and set to `~/Dropbox/dotfiles/Alfred`.
 
 # Post Install Checklist
 
 - Login to VSCode w/ GitHub
+- Login to Dropbox
+- Login to Kite
+- Login to Google Backup and Sync
+- Login to Docker
 
 # Dependencies
 
 These are the dependencies of this project:
 
 - [https://github.com/anishathalye/dotbot](https://github.com/anishathalye/dotbot)
+
+# Decommission Computer
+
+[Reinstall macOS](https://support.apple.com/en-us/HT204904)
+
+or
+
+[Create a bootable USB installer for macOS](https://support.apple.com/en-us/HT201372).
+
+Software audit:
+
+- Uninstall unwanted software (e.g. GarageBand, iMovie, Keynote, Numbers, Pages)
+- Install missing software (look at `/Applications`, panes in System Preferences , maybe `~/Applications`, etc.)
+
+Backup / sync files:
+
+- Commit and Push to remote repositories
+- Run `code --list-extensions > vscode_extensions` from `~/.dotfiles` to export [VS Code extensions](vscode_extensions)
+- Time Machine
+- Dropbox / Google Drive
+- Manual Backups (external drives, redundant cloud services)
+- Contacts, Photos, Calendar, Messages (Google, iCloud)
+- etc.
+
+Deactivate licenses:
+
+- Dropbox (`Preferences > Account > Unlink`)
+- Google Backup and Sync (`Preferences > Settings > Disconnect Account`)
+- Sign Out of App Store (`Menu > Store > Sign Out`)
+- Sign Out of Apple ID (`System Preferences > Apple ID > Overview > SIgn Out`)
+- iTunes, etc.
 
 # Guides
 
