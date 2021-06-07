@@ -24,31 +24,44 @@ These are my dotfiles for backing up and setting up macOS.
 
     ```zsh
     # Generate SSH key in default location (~/.ssh/config)
-    ssh-keygen -t rsa -b 4096 -C "20562845+frederickjjoubert@users.noreply.github.com"
+    ssh-keygen -t ed25519 -C "20562845+frederickjjoubert@users.noreply.github.com"
+
+    # When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.
+
+    # At the prompt, type a secure passphrase.
+
+    # Next, add SSH key to the ssh-agent
 
     # Start the ssh-agent
     eval "$(ssh-agent -s)"
 
-    # Create config file with necessary settings
-    << EOF > ~/.ssh/config
+    # Check if `~/.ssh/config` exists
+
+    open ~/.ssh/config
+
+    # If the file doesn't exist, create the file
+
+    touch ~/.ssh/config
+
+    # Open your `~/.ssh/config file`, then modify the file to contain the following lines. If your SSH key file has a different name or path than the example code, modify the filename or path to match your current setup.
+
     Host *
       AddKeysToAgent yes
       UseKeychain yes
-      IdentityFile ~/.ssh/id_rsa
-    EOF
+      IdentityFile ~/.ssh/id_ed25519
 
     # Add private key to ssh-agent
-    ssh-add -K ~/.ssh/id_rsa
+    ssh-add -K ~/.ssh/id_ed25519
 
     # Copy public key and add to github.com > Settings > SSH and GPG keys
-    pbcopy < ~/.ssh/id_rsa.pub
+    pbcopy < ~/.ssh/id_ed25519.pub
 
     # Test SSH connection, then verify fingerprint and username
     # https://help.github.com/en/github/authenticating-to-github/testing-your-ssh-connection
     ssh -T git@github.com
 
-    # Switch from HTTPS to SSH
-    git remote set-url origin git@github.com:frederickjjoubert/dotfiles.git
+    # (Within ~/.dotiles) Switch from HTTPS to SSH
+    git remote set-url origin git@github.com:frederickjjoubert/dotfiles_macos.git
     ```
 
 ## Manual Steps
