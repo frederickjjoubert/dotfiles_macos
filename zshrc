@@ -26,16 +26,12 @@ RPROMPT='%*'
 
 # Add Locations to $PATH Variable
 
-## Google Cloud SDK
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-
 # Write Handy Functions
 function mkcd() {
     mkdir -p "$@" && cd "$_";
 }
 
 # Ush ZSH Plugins
-plugins=(gcloud)
+
 
 # Other Surprises!

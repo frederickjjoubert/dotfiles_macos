@@ -90,9 +90,7 @@ These are the dependencies of this project:
 
 # Decommission Computer
 
-[Reinstall macOS](https://support.apple.com/en-us/HT204904)
-
-or
+For a clean install:
 
 [Create a bootable USB installer for macOS](https://support.apple.com/en-us/HT201372).
 
