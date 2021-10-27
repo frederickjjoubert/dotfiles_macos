@@ -77,9 +77,8 @@ These are my dotfiles for backing up and setting up macOS.
 # Post Install Checklist
 
 - Login to Dropbox
-- Login to Docker
-- Login to Google Backup and Sync
-- Login to Kite
+- Login to Google Drive
+- Login to Boxcryptor
 - Login to VSCode w/ GitHub
 
 # Dependencies
@@ -103,6 +102,7 @@ Backup / sync files:
 
 - Commit and Push to remote repositories
 - Run `code --list-extensions > vscode_extensions` from `~/.dotfiles` to export [VS Code extensions](vscode_extensions)
+  - Note that I no longer use this as I use VS Code's Sync Feature.
 - Time Machine
 - Dropbox / Google Drive
 - Manual Backups (external drives, redundant cloud services)
@@ -113,7 +113,7 @@ Backup / sync files:
 Deactivate licenses:
 
 - Dropbox (`Preferences > Account > Unlink`)
-- Google Backup and Sync (`Preferences > Settings > Disconnect Account`)
+- Google Drive (`Preferences > Settings > Disconnect Account`)
 - Sign Out of App Store (`Menu > Store > Sign Out`)
 - Sign Out of Apple ID (`System Preferences > Apple ID > Overview > SIgn Out`)
 - iTunes, etc.
