@@ -18,7 +18,7 @@ These are my dotfiles for backing up and setting up macOS.
 6. Login to iCloud and the App Store.
 7. [`./install`](install)
 8. Restart computer.
-9. Setup up Dropbox (use multifactor authentication!) and allow files to sync before setting up dependent applications. Alfred settings are stored here. Mackup depends on this as well (and thus so do Terminal and VS Code).
+9. Perform Manual Steps below: Setup up Dropbox (use multifactor authentication!) and allow files to sync before setting up dependent applications. Alfred settings are stored here. Mackup depends on this as well (and thus so do Terminal and VS Code).
 10. Run `mackup restore`. Consider doing a `mackup restore --dry-run --verbose` first.
 11. [Generate ssh key](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh), add to GitHub, and switch remotes.
 
@@ -66,6 +66,11 @@ These are my dotfiles for backing up and setting up macOS.
 
 ## Manual Steps
 
+### Cloud Storage
+
+- Login to Cloud Storage
+- Login to Boxcryptor
+
 ### Alfred
 
 1. `System Preferences > Keyboard > Shortcuts > Spotlight > Show Spotlight search (cmd+space)` uncheck.
@@ -73,13 +78,6 @@ These are my dotfiles for backing up and setting up macOS.
 3. `Alfred Preferences > General > Request Permissions`.
 4. `Alfred Preferences > General > Alfred Hotkey` change to `cmd+space`.
 5. `Alfred Preferences > Advanced > Set preferences folder` and set to `~/Dropbox/dotfiles/Alfred`.
-
-# Post Install Checklist
-
-- Login to Dropbox
-- Login to Google Drive
-- Login to Boxcryptor
-- Login to VSCode w/ GitHub
 
 # Dependencies
 
@@ -101,8 +99,6 @@ Software audit:
 Backup / sync files:
 
 - Commit and Push to remote repositories
-- Run `code --list-extensions > vscode_extensions` from `~/.dotfiles` to export [VS Code extensions](vscode_extensions)
-  - Note that I no longer use this as I use VS Code's Sync Feature.
 - Time Machine
 - Dropbox / Google Drive
 - Manual Backups (external drives, redundant cloud services)
