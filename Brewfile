@@ -4,13 +4,14 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 brew "bat"
-brew "openssl@1.1"
 brew "exa"
 brew "git"
+brew "git-lfs"
+brew "openssl@1.1"
 brew "httpie"
 brew "mackup"
 brew "mas"
-brew "python@3.9"
+brew "mono"
 brew "tree"
 cask "adobe-acrobat-reader"
 cask "alfred"
@@ -19,6 +20,7 @@ cask "blender"
 cask "boxcryptor"
 cask "ccleaner"
 cask "discord"
+cask "dotnet-sdk"
 cask "drawio"
 cask "dropbox"
 cask "firefox"
@@ -26,6 +28,7 @@ cask "fork"
 cask "gitkraken"
 cask "godot"
 cask "google-chrome"
+cask "google-drive"
 cask "grammarly"
 cask "insomnia"
 cask "iterm2"
@@ -61,7 +64,7 @@ mas "LastPass", id: 926036361
 mas "Logic Pro", id: 634148309
 mas "Magnet", id: 441258766
 mas "Microsoft To Do", id: 1274495053
-mas "NordVPN IKE", id: 1116599239
+mas "NordVPN", id: 905953485
 mas "Notability", id: 360593530
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
